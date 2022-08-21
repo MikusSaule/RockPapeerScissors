@@ -1,0 +1,54 @@
+mport java.util.Scanner;
+import java.util.Random;
+
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Welcome to the rock,paper,scissors game!");
+        System.out.println("Chose:Rock,paper or Scissors!");
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+        String userChoice;
+        String computerDecision;
+        userChoice = sc.next();
+        sc.next();
+        int num;
+        num = rand.nextInt(3);
+        if(num==0){
+            computerDecision = "Scissors";
+        }
+        else if(num==1){
+            computerDecision = "Rock";
+        }
+        else {
+            computerDecision = "Paper";
+        }
+        switch (computerDecision) {
+            case "Paper" -> System.out.println("The computer chose Paper!");
+            case "Scissors" -> System.out.println("The computer chose Scissors!");
+            case "Rock" -> System.out.println("The computer chose Rock!");
+        }
+        if (userChoice.equals("Rock") && computerDecision.equals("Paper")) {
+            System.out.println("You lose!");
+        }
+        else if (userChoice.equals("Paper") && computerDecision.equals("Scissors")) {
+            System.out.println("You lose!");
+        }
+        else if (userChoice.equals("Scissors") && computerDecision.equals("Rock")) {
+            System.out.println("You lose!");
+        }
+        if (userChoice.equals("Paper") && computerDecision.equals("Rock")) {
+            System.out.println("You Win!");
+        }
+        else if (userChoice.equals("Rock") && computerDecision.equals("Scissors")) {
+            System.out.println("You win!");
+        }
+        else if (userChoice.equals("Scissors") && computerDecision.equals("Paper"))  {
+            System.out.println("You win!");
+        }
+        if (userChoice.equals(computerDecision)){
+            System.out.println("Tie!");
+        }
+
+    }
+}
